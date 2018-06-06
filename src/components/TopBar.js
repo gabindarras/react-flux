@@ -4,6 +4,7 @@ import './TopBar.css';
 
 // Stores
 import { SmileyStore } from '../smiley/stores/smiley.store';
+import { WeatherStore } from '../weater/store/weather.store';
 
 class TopBar extends Component {
   constructor() {
@@ -15,10 +16,12 @@ class TopBar extends Component {
 
   componentDidMount = () => {
     SmileyStore.addChangeListener(this.onChange);
+    WeatherStore.addChangeListener(this.onChange);
   };
 
   componentWillUnmount = () => {
     SmileyStore.removeChangeListener(this.onChange);
+    WeatherStore.removeChangeListener(this.onChange);
   };
 
   render() {
@@ -28,7 +31,7 @@ class TopBar extends Component {
       <header className="App-header">
         <i className={smileyLeftStyle} />
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Welcome to Flux</h1>
+        <h1 className="App-title">{this.state.currentWeather}</h1>
         <i className={smileyRightStyle} />
       </header>
     );
@@ -40,7 +43,8 @@ class TopBar extends Component {
 
   getStatesFromStores() {
     return {
-      currentSmiley: SmileyStore.getCurrentSmiley()
+      currentSmiley: SmileyStore.getCurrentSmiley(),
+      currentWeather: WeatherStore.getWeather()
     };
   }
 }
