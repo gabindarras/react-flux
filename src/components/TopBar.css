@@ -1,0 +1,15 @@
+.smiley-left {
+  margin: 0;
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  color: white;
+}
+
+.smiley-right {
+  margin: 0;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  color: white;
+}
