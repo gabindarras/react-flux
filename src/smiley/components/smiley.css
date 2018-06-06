@@ -1,0 +1,16 @@
+.far {
+  cursor: pointer;
+  margin: 50px;
+}
+
+.fa-smile {
+  color: green;
+}
+
+.fa-frown {
+  color: red;
+}
+
+.fa-8x {
+  cursor: default;
+}
